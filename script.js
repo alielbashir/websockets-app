@@ -10,11 +10,11 @@ socket.emit('new-user', name)
 
 socket.on('chat-message', data => {
     console.log(data)
-    appendMessage(data)
+    appendMessage('${data.name}: ${data.messsage}')
 })
 
-socket.on('user-connected', data => {
-    console.log('user ' + data + ' has arrived!')
+socket.on('user-connected', user => {
+    appendMessage(`${user} arrived!`)
 })
 
 messageForm.addEventListener('submit', e => {
@@ -22,6 +22,7 @@ messageForm.addEventListener('submit', e => {
     e.preventDefault()
     const message = messageInput.value
     socket.emit('send-chat-message', message)
+    appendMessage(`You: ${message}`)
 
     // clear message after sending
     messageInput.value = ''
