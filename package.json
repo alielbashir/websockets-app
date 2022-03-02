@@ -1,6 +1,7 @@
 {
   "name": "chatapp",
   "version": "1.0.0",
+  "type": "module",
   "description": "Chat app using socket.io",
   "main": "index.js",
   "scripts": {

@@ -6,6 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat App</title>
+    <!--script downloaded from here-->
+    <!--defer so it only downloads after parsing-->
+    <script src="http://localhost:3003/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io('http://localhost:3003');
+    </script>
+    <script defer type="module" src="script.js"></script>
     <style>
         body {
             padding: 0;
