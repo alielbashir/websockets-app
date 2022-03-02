@@ -17,6 +17,10 @@ socket.on('user-connected', user => {
     appendMessage(`${user} arrived!`)
 })
 
+socket.on('user-disconnected', user => {
+    appendMessage(`${user} disconnected!`)
+})
+
 messageForm.addEventListener('submit', e => {
     // stop page from refreshing by default on submit event
     e.preventDefault()
